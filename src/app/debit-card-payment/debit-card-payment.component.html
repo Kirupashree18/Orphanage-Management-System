@@ -1,0 +1,28 @@
+<img src="credit3.png" alt="Background Image" class="bg-image" width="25%">
+<div class="container">
+    <h2>Debit Card Payment</h2>
+    <form id="debitCardForm" #debitForm="ngForm">
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" name="cardNumber" [(ngModel)]="cardNumber" placeholder="Enter your card number" required>
+        <br>
+
+        <label for="card-holder">Card Holder Name:</label>
+        <input type="text" id="card-holder" name="cardHolder" [(ngModel)]="cardHolder" placeholder="Enter card holder's name" required>
+        <br>
+
+        <label for="expiry-date">Expiry Date:</label>
+        <input type="text" id="expiry-date" name="expiryDate" [(ngModel)]="expiryDate" placeholder="MM/YY" required>
+        <br>
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" [(ngModel)]="cvv" placeholder="Enter CVV" required>
+        <br>
+
+        <button type="button" (click)="onSubmit(debitForm)">Complete Donation</button>
+    </form>
+
+    <div class="success-message" *ngIf="showSuccessMessage">
+        <span class="tick">✔️</span> Donation completed successfully! Thank you for your contribution.
+    </div>
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+</div>
