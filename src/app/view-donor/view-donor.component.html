@@ -1,0 +1,30 @@
+<div class="donor-details-container">
+    <h2>Donor Details</h2>
+    <img src="donordetails.jpg" alt="Background Image" class="bg-image">
+    <button (click)="goBack()">Back to Dashboard</button>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Donation Category</th>
+                    <th>Reason for Donation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let donor of donors; let i = index" [class.odd]="i % 2 !== 0">
+                    <td>{{ donor.fullName }}</td>
+                    <td>{{ donor.email }}</td>
+                    <td>{{ donor.phone }}</td>
+                    <td>{{ donor.address }}</td>
+                    <td>{{ donor.donorCategory }}</td>
+                    <td>{{ donor.reasonForCategory }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>
