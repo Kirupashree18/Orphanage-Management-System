@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Bank Transfer</h2>
+    <form id="bankTransferForm">
+        <label for="account-number">Account Number:</label>
+        <input type="text" id="account-number" placeholder="Enter your account number" required>
+        <br>
+
+        <label for="ifsc-code">IFSC Code:</label>
+        <input type="text" id="ifsc-code" placeholder="Enter IFSC code" required>
+        <br>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount" required>
+        <br>
+
+        <button type="button" (click)="onSubmit()">Proceed with Bank Transfer</button>
+    </form>
+
+    <div class="success-message" *ngIf="showSuccessMessage">
+        <span class="tick">✔️</span> Donation completed successfully! Thank you for your contribution.
+    </div>
+</div>
