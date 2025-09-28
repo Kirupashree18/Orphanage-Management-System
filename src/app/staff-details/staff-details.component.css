@@ -1,0 +1,91 @@
+.Container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  padding: 60px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Darker shadow for contrast */
+  width: 90%; /* Increase width for better visibility */
+  max-width: 800px; /* Set max width for responsiveness */
+  margin: 50px auto; /* Center and reduce top margin */
+  color: #333; /* Dark text for readability on white background */
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: 2em;
+  font-weight: bold;
+  color: #bc3131; /* White text for contrast with background image */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Shadow for readability */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.95); /* Slightly opaque white for table */
+  color: #333; /* Dark text for readability */
+}
+
+th {
+  background-color: #4CAF50; /* Green background to match the image */
+  color: #ffffff; /* White text for contrast */
+  font-weight: 900; /* Very bold headings */
+  padding: 15px;
+  text-align: left;
+  text-transform: uppercase; /* Uppercase for emphasis (optional) */
+}
+
+td {
+  border: 1px solid #ddd; /* Lighter border for cells */
+  padding: 12px;
+  text-align: left;
+  color: #333; /* Consistent dark text */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternate row color for readability */
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* Hover effect for interactivity */
+}
+
+.no-data-message, .error-message {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.no-data-message {
+  background-color: #e0f7fa;
+  color: #006064;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+}
+.back {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
