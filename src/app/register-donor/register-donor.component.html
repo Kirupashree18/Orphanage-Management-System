@@ -1,0 +1,50 @@
+<div class="container">
+    <img src="regdon.jpg" alt="Background Image" class="bg-image" width="25%">
+    <h2>Register as a Donor</h2>
+    <form id="donorForm" onsubmit="return false;">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="name@gmail.com" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+
+        <label for="donationCategory">Donation Category:</label>
+        <select id="donationCategory" name="donationCategory" required>
+            <option value="">Select Category</option>
+            <option value="individual">Individual</option>
+            <option value="organization">Organization</option>
+            <option value="business">Business</option>
+            <option value="non_profit">Non-Profit</option>
+            <option value="government">Government</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="reasonForDonation">Reason for Donation:</label>
+        <select id="reasonForDonation" name="reasonForDonation" required>
+            <option value="">Select Reason</option>
+            <option value="public_acknowledgment">Being publicly acknowledged</option>
+            <option value="birthday">Birthday</option>
+            <option value="marriage">Marriage</option>
+            <option value="anniversary">Anniversary</option>
+            <option value="memorial">Memorial</option>
+            <option value="charity_event">Charity Event</option>
+            <option value="religious_festival">Religious Festival</option>
+            <option value="graduation">Graduation</option>
+            <option value="new_baby">New Baby</option>
+            <option value="fundraising_campaign">Fundraising Campaign</option>
+            <option value="general_support">General Support</option>
+        </select>
+
+        <button type="button" onclick="this.closest('form').dispatchEvent(new Event('submit'))">Register</button>
+        <button class="back" > <a href="/donor">Back</a></button>
+    </form>
+
+    <div id="confirmationMessage" class="confirmation-message" style="display: none;"></div>
+    <div id="errorMessage" class="error-message" style="display: none;"></div>
+</div>
