@@ -1,0 +1,61 @@
+<div class="Container">
+    <h2>Orphan Details</h2>
+    <img src="vieworphan.jpg" alt="Background Image" class="bg-image">
+
+  
+    <div *ngIf="orphan">
+        <table>
+            <thead>
+                <tr>
+                    <th>Orphan ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Health Condition</th>
+                    <th>Adoption Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ orphan.orphanId }}</td>
+                    <td>{{ orphan.name }}</td>
+                    <td>{{ orphan.age }}</td>
+                    <td>{{ orphan.gender }}</td>
+                    <td>{{ orphan.health || 'Not Specified' }}</td>
+                    <td>{{ orphan.adoption_status || 'Not Available' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="orphans.length > 0">
+        <table>
+            <thead>
+                <tr>
+                    <th>Orphan ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Health Condition</th>
+                    <th>Adoption Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let orphan of orphans">
+                    <td>{{ orphan.orphanId }}</td>
+                    <td>{{ orphan.name }}</td>
+                    <td>{{ orphan.age }}</td>
+                    <td>{{ orphan.gender }}</td>
+                    <td>{{ orphan.health || 'Not Specified' }}</td>
+                    <td>{{ orphan.adoption_status || 'Not Available' }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="back" (click)="goBack()">Back</button>
+    </div>
+
+ 
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+</div>
