@@ -1,0 +1,21 @@
+<div class="bg-image-container">
+  <img src="staffnew.jpg" alt="Background Image" class="bg-image">
+  <div class="login-container">
+    <h2>Staff Login</h2>
+    <input 
+      type="text" 
+      id="username" 
+      #usernameInput
+      placeholder="Enter Username" 
+      required>
+    <input 
+      type="password" 
+      id="password" 
+      #passwordInput
+      placeholder="Enter Password" 
+      required>
+    <button (click)="validateLogin(usernameInput.value, passwordInput.value)">Login</button>
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+    <button (click)="goBack()">Back to Dashboard</button>
+  </div>
+</div>
