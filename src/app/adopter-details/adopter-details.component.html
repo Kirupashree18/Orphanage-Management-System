@@ -1,0 +1,42 @@
+<div class="adopter-details-container">
+  <h2>Adopter Details</h2>
+  <img src="familytype.jpg" alt="Background Image" class="bg-image">
+  <button (click)="goBack()">Back to Dashboard</button>
+  <div class="table-container">
+      <table>
+          <thead>
+              <tr>
+                  <th>Full Name</th>
+                  <th>Age</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Income</th>
+                  <th>Occupation</th>
+                  <th>Marital Status</th>
+                  <th>Family Type</th>
+                  <th>Household Members</th>
+                  <th>Address</th>
+                  <th>Preferred Age</th>
+                  <th>Preferred Gender</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let adopter of adopters; let i = index" [class.odd]="i % 2 !== 0">
+                  <td>{{ adopter.fullName }}</td>
+                  <td>{{ adopter.age }}</td>
+                  <td>{{ adopter.email }}</td>
+                  <td>{{ adopter.phone }}</td>
+                  <td>{{ adopter.income }}</td>
+                  <td>{{ adopter.occupation }}</td>
+                  <td>{{ adopter.maritalStatus }}</td>
+                  <td>{{ adopter.familyType }}</td>
+                  <td>{{ adopter.householdMembers }}</td>
+                  <td>{{ adopter.address }}</td>
+                  <td>{{ adopter.preferredAge }}</td>
+                  <td>{{ adopter.preferredGender }}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>
