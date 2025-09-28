@@ -1,0 +1,21 @@
+<div class="bg-image-container">
+    <img src="admin1.jpg" alt="Background Image" class="bg-image">
+    <div class="login-container">
+      <h2>Admin Login</h2>
+      <input 
+        #usernameInput
+        type="text" 
+        id="username" 
+        placeholder="Enter Username" 
+        required>
+      <input 
+        #passwordInput
+        type="password" 
+        id="password" 
+        placeholder="Enter Password" 
+        required>
+      <button (click)="validateLogin(usernameInput.value, passwordInput.value)">Login</button>
+      <p class="error-message">{{ errorMessage }}</p>
+      <button (click)="goBack()">Back to Home</button>
+    </div>
+  </div>
