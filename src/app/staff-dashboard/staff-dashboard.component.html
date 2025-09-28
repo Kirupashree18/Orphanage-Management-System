@@ -1,0 +1,80 @@
+<div class="bg-image-container">
+    <img src="staffdet.jpg" alt="Background Image" class="bg-image">
+    <div class="dashboard-container">
+      <h2>Staff Dashboard</h2>
+      <div class="button-group">
+        <a routerLink="/staff-detail"><button>View Staff Details</button></a>
+        <a routerLink="/orphan-details"><button class="orphan-details">View Orphan Records</button></a>
+        <button (click)="logout()">Logout</button>
+      </div>
+      <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+  
+     
+      <div class="staff-list" *ngIf="showStaffList && staff.length > 0">
+        <h3>Staff Records</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Experience</th>
+              <th>Address</th>
+              <th>Role</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let staffMember of staff">
+              <td>{{ staffMember.id }}</td>
+              <td>{{ staffMember.name }}</td>
+              <td>{{ staffMember.age }}</td>
+              <td>{{ staffMember.gender }}</td>
+              <td>{{ staffMember.experience }}</td>
+              <td>{{ staffMember.address }}</td>
+              <td>{{ staffMember.role }}</td>
+              <td>{{ staffMember.contact }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+  
+      <div class="no-data-message" *ngIf="showStaffList && staff.length === 0">
+        No staff records found.
+      </div>
+  
+     
+      <div class="orphan-list" *ngIf="showOrphanList && orphans.length > 0">
+        <h3>Orphan Records</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Health</th>
+              <th>Adoption Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let orphan of orphans">
+              <td>{{ orphan.orphanId }}</td>
+              <td>{{ orphan.name }}</td>
+              <td>{{ orphan.age }}</td>
+              <td>{{ orphan.gender }}</td>
+              <td>{{ orphan.health || 'N/A' }}</td>
+              <td>{{ orphan.adoption_status }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+  
+      <div class="no-data-message" *ngIf="showOrphanList && orphans.length === 0">
+        No orphan records found.
+      </div>
+    </div>
+  </div>
