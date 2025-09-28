@@ -1,0 +1,42 @@
+<div class="container">
+  <img src="donationdetails.png" alt="Background Image" class="bg-image">
+    <h2>Money Donation Details</h2>
+  
+   
+    <div *ngIf="loading" class="loading">Loading...</div>
+  
+  
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  
+   
+    <table *ngIf="!loading && donations.length > 0" class="donation-table">
+      <thead>
+        <tr>
+          <th>Donor Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Amount</th>
+          <th>Payment Method</th>
+          <th>Donation Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let donation of donations">
+          <td>{{ donation.donorName }}</td>
+          <td>{{ donation.email }}</td>
+          <td>{{ donation.phone }}</td>
+          <td>{{ donation.address }}</td>
+          <td>{{ donation.amount }}</td>
+          <td>{{ donation.paymentMethod }}</td>
+          <td>{{ donation.donationDate | date:'medium' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  
+    <div *ngIf="!loading && donations.length === 0" class="no-data">
+      No money donations found.
+    </div>
+    <button class="back" > <a href="/admin-dashboard">Back</a></button>
+  </div>
