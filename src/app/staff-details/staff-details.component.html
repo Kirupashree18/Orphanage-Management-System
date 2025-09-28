@@ -1,0 +1,43 @@
+<div class="Container">
+    <h2>Staff Details</h2>
+    <img src="staff.jpg" alt="Background Image" class="bg-image">
+ 
+    <div *ngIf="staff.length > 0">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Experience</th>
+                    <th>Address</th>
+                    <th>Role</th>
+                    <th>Contact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let staffMember of staff">
+                    <td>{{ staffMember.id }}</td>
+                    <td>{{ staffMember.name }}</td>
+                    <td>{{ staffMember.age }}</td>
+                    <td>{{ staffMember.gender }}</td>
+                    <td>{{ staffMember.experience }}</td>
+                    <td>{{ staffMember.address }}</td>
+                    <td>{{ staffMember.role }}</td>
+                    <td>{{ staffMember.contact }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div *ngIf="staff.length === 0 && !errorMessage" class="no-data-message">
+        No staff records found.
+    </div>
+    <button class="back" > <a href="/staff-dashboard">Back</a></button>
+ 
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+</div>
