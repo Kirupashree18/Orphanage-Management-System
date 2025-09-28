@@ -1,0 +1,49 @@
+<div class="create-orphan-container">
+  <img src="createorphan.jpg" alt="Background Image" class="bg-image">
+  <h2>Create Orphan Record</h2>
+  <div class="form-container">
+    <form #orphanForm>
+      <div class="form-group">
+        <input type="text" id="orphan_id" placeholder="Enter Orphan ID" required>
+      </div>
+      <div class="form-group">
+        <input type="text" id="name" placeholder="Enter Name" required>
+      </div>
+      <div class="form-group">
+        <input type="number" id="age" placeholder="Enter Age" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender" required>
+          <option value="" disabled selected>Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Others">Others</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="health">Health Condition:</label>
+        <select id="health" required>
+          <option value="" disabled selected>Select Health Condition</option>
+          <option value="Healthy">Healthy - No medical issues</option>
+          <option value="Minor Issues">Minor Issues - e.g., allergies, minor injuries</option>
+          <option value="Chronic Condition">Chronic Condition - e.g., asthma, diabetes</option>
+          <option value="Special Needs">Special Needs - e.g., physical/mental disabilities</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="adoption_status">Adoption Status:</label>
+        <select id="adoption_status" required>
+          <option value="" disabled selected>Select Status</option>
+          <option value="Available">Available</option>
+          <option value="Adopted">Adopted</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="button" (click)="saveRecord()">Save Record</button>
+        <button class="back" > <a href="/admin-dashboard">Back</a></button>
+      </div>
+    </form>
+  </div>
+  <p class="error-message">{{ errorMessage }}</p>
+</div>
