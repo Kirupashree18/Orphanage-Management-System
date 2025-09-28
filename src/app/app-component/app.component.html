@@ -1,0 +1,56 @@
+<!-- Wrap the AppComponent content in a div with a class -->
+<div class="app-content">
+    <header class="header">
+      <nav class="nav">
+          <a href="#about" (click)="toggleAbout($event)">About Us</a>
+          <a href="#contact" (click)="toggleContact($event)">Contact</a>
+          <a href="#location" (click)="toggleLocation($event)">Location</a>
+          <a routerLink="nav-link active" routerLink ="/login">Login</a>
+      </nav>
+    </header>
+   
+    <div class="container">
+        <h1>Welcome to Magic Moments Home🧚‍♀️</h1>
+      <img src="lognew.jpg" alt="Background Image" class="bg-image">
+    
+  
+      <section class="about-content" [class.active]="showAboutSection">
+          <h2>About Us</h2>
+          <p>
+              Magic Moments Home is a non-profit organization established in 2010 
+              with a mission to provide care, education, and support to orphaned 
+              children. Our dedicated team works tirelessly to ensure every child 
+              receives:
+          </p>
+          A safe and nurturing environment<br>
+          Quality education and healthcare<br>
+          Opportunities for personal growth<br>
+          Love and emotional support<br>
+          <p>
+              We believe every child deserves a chance to thrive and build a 
+              brighter future.
+          </p>
+      </section>
+  
+      <section class="contact-content" [class.active]="showContactSection">
+          <h2>Contact Us</h2>
+          <p><span class="location-icon">📍</span> Mepco Nagar</p>
+          <p>Kirupashree</p>
+          <p>Phone: + 9876543210 </p>
+          <p>Jenifer</p>
+          <p>Phone: + 8489162167</p>
+      </section>
+  
+      <section class="location-content" [class.active]="showLocationSection">
+          <h2>Location</h2>
+          <p><span class="location-icon">📍</span> Mepco Nagar ,sivakasi ,Virudhunagar District </p>
+      </section>
+    </div>
+   
+    <footer class="footer">
+      <p>© 2025 Orphanage Management System. All rights reserved.</p>
+    </footer>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>
