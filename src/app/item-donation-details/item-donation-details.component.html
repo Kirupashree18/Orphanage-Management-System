@@ -1,0 +1,30 @@
+<div class="container">
+  <img src="donationdetails.png" alt="Background Image" class="bg-image">
+    <h2>Item Donation Details</h2>
+    <div class="table-container">
+      <table class="donation-table">
+        <thead>
+          <tr>
+            <th>Donor Name</th>
+            <th>Address</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Donation Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let donation of donations">
+            <td>{{ donation.donorName }}</td>
+            <td>{{ donation.address }}</td>
+            <td>{{ donation.itemName }}</td>
+            <td>{{ donation.quantity }}</td>
+            <td>{{ donation.category }}</td>
+            <td>{{ donation.donationDate | date:'mediumDate' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="back" > <a href="/admin-dashboard">Back</a></button>
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+  </div>
