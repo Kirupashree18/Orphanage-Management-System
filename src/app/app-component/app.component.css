@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+ /* Replace with your image path */
+    background-size: cover; /* Covers the entire viewport */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    min-height: 100vh; /* Ensures it fills the viewport height */
+    color: #333;
+    line-height: 1.6;
+}
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.header {
+    background-color: rgba(0,0,0,0.1); /* Semi-transparent for readability */
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav a {
+    color: rgb(12, 56, 233);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav a:hover {
+    color: #e9f2f2;
+}
+
+ .container {
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 2rem;
+    text-align: center;
+}
+
+.welcome-section {
+    background-color:  rgba(223, 211, 211, 0.1); /* Semi-transparent white for readability */
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #e9edf2;
+    margin-bottom: 1rem;
+}
+
+p {
+    
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(9, 14, 71, 0.1); /* Semi-transparent for readability */
+    color: rgb(70, 2, 2);
+}
+
+.about-content {
+    display: none;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgba(249, 249, 249, 0.9);
+    border-radius: 5px;
+}
+
+.about-content.active {
+    display: block;
+}
+
+.contact-content {
+    display: none;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgba(249, 249, 249, 0.9);
+    border-radius: 5px;
+}
+
+.contact-content.active {
+    display: block;
+}
+
+.location-content {
+    display: none;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgba(249, 249, 249, 0.9);
+    border-radius: 5px;
+}
+
+.location-content.active {
+    display: block;
+}
+body.login-route .app-content {
+    display: none;
+}
+
+.location-icon {
+    font-size: 1.2rem;
+    margin-right: 8px;
+    color: #e74c3c;
+    vertical-align: middle;
+}
