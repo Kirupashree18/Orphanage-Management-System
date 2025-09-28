@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.component.css">
+</head>
+<body>
+
+<div class="login-container" [style.display]="isLoginVisible ? 'block' : 'none'">
+  <img src="log.jpg" alt="Background Image" class="bg-image">
+  <h2>Magic Moments Home🧚‍♀️</h2>
+  <button class="main-login">Login</button>
+  <div id="login-options">
+    <button class="staff" ><a href ="/staff">Staff Login</a></button>
+    <button class="donor" > <a href ="/donor">Donor Login</a></button>
+    <button class="adopter" > <a href="/adopter">Adopter Login</a></button>
+    <button class="admin" > <a href="/admin">Admin Login</a></button>
+  </div>
+</div>
+<router-outlet></router-outlet>
+</body>
+</html> 
