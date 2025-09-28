@@ -1,0 +1,76 @@
+<div class="bg-image-container">
+    <img src="admin1.jpg" alt="Background Image" class="bg-image">
+    <div class="dashboard-container">
+      <h2>Admin Dashboard</h2>
+      <div class="button-group">
+        <a routerLink="/create-orphan"><button>Create Orphan Records</button></a>
+        <a routerLink="/update-orphan"><button>Update Orphan Records</button></a>
+        <button (click)="viewOrphans()" class="orphan-details">View Orphan Records</button>
+        <a routerLink="/create-staff"><button>Create Staff Records</button></a>
+        <a routerLink="/update-staff"><button>Update Staff Details</button></a>
+        <button (click)="viewStaff()">View Staff Details</button>
+        <button (click)="viewDonorOptions()">View Donor Details</button>
+        <a routerLink="/adopter-details"><button>View Adopter Details</button></a>
+        <button (click)="logout()">Logout</button>
+      </div>
+  
+      <div *ngIf="showDonorOptions" class="donor-options-container">
+        <h2>Donor Details Options</h2>
+        <div class="button-group">
+          <button [routerLink]="['/view-donor']">View Registered Donor Details</button>
+          <button [routerLink]="['/item-donation-details']">Donated Item Details</button>
+          <button [routerLink]="['/money-donation-details']">Donated Money Details</button>
+          <button [routerLink]="['/food-donation-details']">Donated Food Details</button>
+        </div>
+      </div>
+  
+   
+      <div *ngIf="showOrphanList" class="orphan-details-container">
+        <h2>Orphan Records</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Health Condition</th>
+              <th>Adoption Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let orphan of orphans">
+              <td>{{ orphan.name }}</td>
+              <td>{{ orphan.age }}</td>
+              <td>{{ orphan.gender }}</td>
+              <td>{{ orphan.health }}</td>
+              <td>{{ orphan.adoption_status }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <div *ngIf="showStaffList" class="staff-details-container">
+        <h2>Staff Records</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Role</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let staffMember of staff">
+              <td>{{ staffMember.name }}</td>
+              <td>{{ staffMember.age }}</td>
+              <td>{{ staffMember.role }}</td>
+              <td>{{ staffMember.contact }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+    </div>
+  </div>
