@@ -1,0 +1,151 @@
+<div class="dashboard-container">
+  <img src="familytype.jpg" alt="Background Image" class="bg-image">
+  <form id="adoptionForm">
+    <div class="form-grid">
+
+      <div class="form-column">
+        <label for="fullName">Full Name:</label>
+        <input
+          #fullName
+          type="text"
+          id="fullName"
+          placeholder="Enter your full name"
+          required
+        >
+        <div class="error-message" *ngIf="errors['fullName']">{{ errors['fullName'] }}</div>
+
+        <label for="age">Age:</label>
+        <input
+          #age
+          type="number"
+          id="age"
+          placeholder="Enter your age"
+          required
+          min="21"
+        >
+        <div class="error-message" *ngIf="errors['age']">{{ errors['age'] }}</div>
+
+        <label for="email">Email:</label>
+        <input
+          #email
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        >
+        <div class="error-message" *ngIf="errors['email']">{{ errors['email'] }}</div>
+
+        <label for="phone">Phone Number:</label>
+        <input
+          #phone
+          type="tel"
+          id="phone"
+          placeholder="Enter your phone number"
+          required
+          pattern="[0-9]{10}"
+        >
+        <div class="error-message" *ngIf="errors['phone']">{{ errors['phone'] }}</div>
+
+        <label for="income">Annual Income:</label>
+        <input
+          #income
+          type="number"
+          id="income"
+          placeholder="Enter your annual income"
+          required
+          min="0"
+        >
+        <div class="error-message" *ngIf="errors['income']">{{ errors['income'] }}</div>
+
+        <label for="occupation">Occupation:</label>
+        <input
+          #occupation
+          type="text"
+          id="occupation"
+          placeholder="Enter your occupation"
+          required
+        >
+        <div class="error-message" *ngIf="errors['occupation']">{{ errors['occupation'] }}</div>
+      </div>
+
+      <div class="form-column">
+        <label for="maritalStatus">Marital Status:</label>
+        <select #maritalStatus id="maritalStatus" required>
+          <option value="" disabled selected>Select marital status</option>
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+          <option value="Divorced">Divorced</option>
+          <option value="Widowed">Widowed</option>
+          <option value="Partnered">Partnered</option>
+        </select>
+        <div class="error-message" *ngIf="errors['maritalStatus']">{{ errors['maritalStatus'] }}</div>
+
+        <label for="familyType">Family Type:</label>
+        <select #familyType id="familyType" required>
+          <option value="" disabled selected>Select family type</option>
+          <option value="Nuclear Family">Nuclear Family</option>
+          <option value="Joint Family">Joint Family</option>
+          <option value="Single Parent">Single Parent</option>
+          <option value="LGBTQ+ Couple">LGBTQ+ Couple</option>
+        </select>
+        <div class="error-message" *ngIf="errors['familyType']">{{ errors['familyType'] }}</div>
+
+        <label for="householdMembers">Number of Household Members:</label>
+        <input
+          #householdMembers
+          type="number"
+          id="householdMembers"
+          placeholder="Enter number of household members"
+          required
+          min="1"
+        >
+        <div class="error-message" *ngIf="errors['householdMembers']">{{ errors['householdMembers'] }}</div>
+
+        <label for="address">Address:</label>
+        <textarea
+          #address
+          id="address"
+          placeholder="Enter your full address"
+          rows="4"
+          required
+        ></textarea>
+        <div class="error-message" *ngIf="errors['address']">{{ errors['address'] }}</div>
+      </div>
+    </div>
+
+    <div class="form-grid">
+   
+      <div class="form-column full-width">
+        <label for="preferredAge">Preferred Age of Child:</label>
+        <select #preferredAge id="preferredAge" required>
+          <option value="" disabled selected>Select age range</option>
+          <option value="0-2">0-2 years</option>
+          <option value="3-5">3-5 years</option>
+          <option value="6-12">6-12 years</option>
+          <option value="13-18">13-18 years</option>
+          <option value="No Preference">No Preference</option>
+        </select>
+        <div class="error-message" *ngIf="errors['preferredAge']">{{ errors['preferredAge'] }}</div>
+
+        <label for="preferredGender">Preferred Gender of Child:</label>
+        <select #preferredGender id="preferredGender" required>
+          <option value="" disabled selected>Select gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="No Preference">No Preference</option>
+        </select>
+        <div class="error-message" *ngIf="errors['preferredGender']">{{ errors['preferredGender'] }}</div>
+      </div>
+    </div>
+  </form>
+
+  <div class="form-actions">
+    <button type="button" (click)="submitApplication()" [disabled]="isSubmitting">
+      {{ isSubmitting ? 'Submitting...' : 'Submit Application' }}
+    </button>
+    <button type="button" (click)="goBack()">Back</button>
+  </div>
+
+  <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+  <p class="success-message" *ngIf="successMessage">{{ successMessage }}</p>
+</div>
