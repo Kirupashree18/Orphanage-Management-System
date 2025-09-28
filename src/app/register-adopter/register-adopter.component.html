@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Adoption</title>
+    <link rel="stylesheet" href="adoption-application.css">
+</head>
+<body>
+
+    <div class="application-container">
+        <h2>Apply for Adoption</h2>
+        <form id="adoption-form">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" required min="1">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" required>
+
+            <label for="family-type">Family Type:</label>
+            <select id="family-type">
+                <option value="Nuclear Family">Nuclear Family</option>
+                <option value="Joint Family">Joint Family</option>
+                <option value="Single Parent">Single Parent</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <button type="submit">Submit Application</button>
+        </form>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <script src="adoption-application.ts"></script>
+
+</body>
+</html>
