@@ -1,0 +1,51 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-container, .family-type-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 500px;
+    margin: 100px auto; /* Centering the container */
+    text-align: center;
+}
+
+/* Button Styles */
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* List Styles */
+ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+li {
+    margin: 5px 0; /* Spacing between list items */
+}
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
