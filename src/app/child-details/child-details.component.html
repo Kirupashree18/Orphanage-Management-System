@@ -1,0 +1,14 @@
+<div class="dashboard-container">
+    <h2>Child Details</h2>
+    <div *ngIf="orphans.length > 0; else noData">
+      <ul>
+        <li *ngFor="let orphan of orphans">
+          Name: {{ orphan.name }}, Age: {{ orphan.age }}, Gender: {{ orphan.gender }}, 
+          Health: {{ orphan.health }}, Adoption Status: {{ orphan.adoption_status }}
+        </li>
+      </ul>
+    </div>
+    <ng-template #noData>
+      <p>No child details available.</p>
+    </ng-template>
+  </div>
