@@ -1,0 +1,22 @@
+<div class="bg-image-container">
+    <img src="donate.jpeg" alt="Background Image" class="bg-image">
+    <div class="login-container">
+      <h2>Donor Login</h2>
+      <div class="form-group">
+        <input 
+          type="text" 
+          id="loginUsername" 
+          #usernameInput
+          placeholder="Enter Username (Full Name)">
+        <input 
+          type="email" 
+          id="loginPassword" 
+          #passwordInput
+          placeholder="Enter Password (Email)">
+      </div>
+      <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+      <button class="login-btn" (click)="validateLogin(usernameInput.value, passwordInput.value)">Login</button>
+      <button class="back"><a routerLink="/login">Back</a></button>
+      <p class="register-link">If you are a new user, <a routerLink="/register-donor">Register here</a></p>
+    </div>
+  </div>
