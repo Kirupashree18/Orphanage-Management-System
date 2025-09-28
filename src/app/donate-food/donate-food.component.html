@@ -1,0 +1,103 @@
+<img src="donatefood.jpg" alt="Background Image" class="bg-image">
+<div class="container">
+    <h2>Donate Food</h2>
+    <form #foodForm="ngForm" (ngSubmit)="onSubmit()" [class.submitting]="isSubmitting">
+        <div class="form-group">
+            <label for="donor-name">Donor Name:</label>
+            <input
+                type="text"
+                id="donor-name"
+                placeholder="Enter your full name"
+                [(ngModel)]="donorName"
+                name="donorName"
+                required
+                #donorNameInput="ngModel"
+                [class.invalid]="donorNameInput.invalid && donorNameInput.touched"
+            >
+            <span class="error" *ngIf="donorNameInput.invalid && donorNameInput.touched">Donor name is required</span>
+        </div>
+
+        <div class="form-group">
+            <label for="food-type">Food Type:</label>
+            <select
+                id="food-type"
+                [(ngModel)]="foodType"
+                name="foodType"
+                required
+                #foodTypeInput="ngModel"
+                [class.invalid]="foodTypeInput.invalid && foodTypeInput.touched"
+            >
+                <option value="" disabled>Select food type</option>
+                <option value="perishable">Perishable</option>
+                <option value="non-perishable">Non-Perishable</option>
+                <option value="cooked">Cooked</option>
+                <option value="raw">Raw</option>
+            </select>
+            <span class="error" *ngIf="foodTypeInput.invalid && foodTypeInput.touched">Food type is required</span>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input
+                type="number"
+                id="quantity"
+                placeholder="Enter quantity (e.g., 5)"
+                [(ngModel)]="quantity"
+                name="quantity"
+                required
+                min="1"
+                #quantityInput="ngModel"
+                [class.invalid]="quantityInput.invalid && quantityInput.touched"
+            >
+            <span class="error" *ngIf="quantityInput.invalid && quantityInput.touched">
+                {{ quantityInput.errors?.['required'] ? 'Quantity is required' : 'Quantity must be at least 1' }}
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="contact-phone">Contact Phone:</label>
+            <input
+                type="tel"
+                id="contact-phone"
+                placeholder="Enter phone number (e.g., 1234567890)"
+                [(ngModel)]="contactPhone"
+                name="contactPhone"
+                required
+                pattern="[0-9]{10}"
+                #contactPhoneInput="ngModel"
+                [class.invalid]="contactPhoneInput.invalid && contactPhoneInput.touched"
+            >
+            <span class="error" *ngIf="contactPhoneInput.invalid && contactPhoneInput.touched">
+                {{ contactPhoneInput.errors?.['required'] ? 'Phone number is required' : 'Phone number must be 10 digits' }}
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="donation-date">Donation Date:</label>
+            <input
+                type="date"
+                id="donation-date"
+                [(ngModel)]="donationDate"
+                name="donationDate"
+                required
+                #donationDateInput="ngModel"
+                [min]="minDate"
+                [class.invalid]="donationDateInput.invalid && donationDateInput.touched"
+            >
+            <span class="error" *ngIf="donationDateInput.invalid && donationDateInput.touched">
+                {{ donationDateInput.errors?.['required'] ? 'Donation date is required' : 'Date must be today or in the future' }}
+            </span>
+        </div>
+
+        <button type="submit" [disabled]="!foodForm.valid || isSubmitting">
+            {{ isSubmitting ? 'Submitting...' : 'Donate' }}
+        </button>
+        <button class="back" > <a href="/donor-dashboard">Back</a></button>
+    </form>
+
+    <div class="success-message" [class.visible]="showSuccess">
+        Thank you for your contribution
+    </div>
+
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+</div>
